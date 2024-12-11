@@ -34,7 +34,6 @@ Control Communication::update_commands(float initial_yaw){  // receive latest co
   msg_t msg;
   while (radio.available()) { // read latest 32 bytes
     radio.read(&msg, sizeof(msg_t)); 
-    if (DEBUG) Serial.println("MSG");
     if (msg.type == 0){ // control message received
       ctrl_msg_count ++;
       last_ctrl_msg = millis(); 
